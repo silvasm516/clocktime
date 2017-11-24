@@ -1,0 +1,289 @@
+<!DOCTYPE HTML
+<html><head><title>Calendar 2017</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="date.created" content="2017-10-30">
+<meta name="generator" content="HTML Calendar Maker 2.0">
+<meta name="licensekey" content="">
+<style type="text/css">
+
+ 
+
+
+
+
+/* Styling for the title (Month and Year) of the calendar */
+div.title {
+    font: x-large Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 40px;
+    background-color: white;
+    color: black;
+    }
+span {
+     font: x-large Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 40px;
+    background-color: white;
+    color: black;
+    font-style: bold;
+}
+h4 {
+    float: left;
+}
+/* Styling for the footer */
+div.footer {
+    font: small Verdana, Arial, Helvetica, sans-serif;
+    text-align: center;
+    }
+/* Styling for the overall table */
+table {
+    font: 100% Verdana, Arial, Helvetica, sans-serif;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    }
+/* Styling for the column headers (days of the week) */
+th {
+    padding: 0 0.5em;
+    text-align: center;
+    background-color:gray;
+    color:white;
+    }
+/* Styling for the individual cells (days) */
+td  {     
+    font-size: large;
+    padding: 0.25em 0.25em;   
+    width: 14%; 
+    height: 80px;
+    text-align: left;
+    vertical-align: top;
+    }
+/* Styling for the date numbers */
+.date  {     
+    font-size: large;
+    padding: 0.25em 0.25em;   
+    text-align: center;
+    vertical-align: top;
+    width: 90%;
+    height: 90%;
+    background-color: tan;
+    }
+/* Class for individual days (coming in future release) */
+.sun {
+     color:red;
+     }
+/* Hide the month element (coming in future release) */
+th.month {
+    visibility: hidden;
+    display:none;
+    }
+#etval  {
+    display:none;
+}
+
+#butval {
+    display: none;
+}
+
+#yourModal {
+
+    color: #0B610B
+}
+
+.modal-header {
+      background-color: #5cb85c;
+}
+
+#close  {
+    margin-bottom: 5%;
+    width: 20%;
+    height: 50px;
+    color: white;
+    background-color: red;
+    font-size: large;
+    font-style: bold;
+   
+}
+/*#hid {
+    display: none;
+}  */ 
+
+ 
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+</style>
+</head>
+<body>
+
+
+<a href = "/o"><button  id ="close">CLOSE</button></a>
+ 
+
+
+
+<span><div class="title" id = "tit"></div>
+<p><h5>WELCOME {{ name }}</h5></p></span>
+ <!-- <form role="form" name = "fim" id = "fim"> --> 
+
+ <table border="1" id ="fim">
+<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+<tr><td><span ></span></td><td><span ></span></td><td><span ></span></td><td><span ></span></td><td><span ></span></td><td><span></span></td><td><span ></span></td></tr>
+<tr><td><span ></span></td><td><span ></span></td><td><span></span></td><td><span ></span></td><td><span ></span></td><td><span ></span></td><td ><button  id = "v" class="date"></button></td></tr>
+<tr><td  ><button id = "u" class="date"></button></td><td ><button id = "t" class="date"></button></td><td ><button id = "s" class="date"></button></td><td><button id = "r" class="date"></button></td><td ><button  id = "q" class="date"></button></td><td ><button  id = "p" class="date"></button></td><td><button id = "o" class="date"></button></td></tr>
+<tr><td ><button id = "n" class="date"></button></td><td ><button  id = "m" class="date"></button></td><td><button id = "l" class="date"></button></td><td ><button  id = "k" class="date"></button></td><td ><button  id = "j" class="date"></button></td><td ><button id = "i" class="date"></button></td><td><button class="date" id = "h" class="date"></button></td></tr>
+<tr><td ><button id = "g" class="date"></button></td><td><button  id = "f" class="date"></button></td><td><button class="date" id = "e"></button></td><td><button class="date" id = "d" ></button></span></td><td><button class="date" id = "c"></button></td><td ><button class="date" id = "b" >&nbsp;</button></td><td ><button class="date" id = "a" >&nbsp;</button></td></tr>
+</table>
+<!-- </form> -->
+
+<div>
+<form role= "form"  id= "hidf" name= "hidn" method="post" action= "/x">
+    {% csrf_token %}
+    <input type= "text" name = "butval" id ="butval"/>
+    <input type= "text" name = "etval" id ="etval" value= "{{ request.session.password }}"/>
+</form>
+</div>
+
+
+
+
+
+<p id = "mod">{{rat}}<p>
+
+<script type="text/javascript">
+
+
+var cup = document.getElementById("fim");
+
+
+
+if(cup.addEventListener) {cup.addEventListener("click", xray,  false);
+             }  
+             else if(cup.attachEvent) { 
+              cup.attachEvent("onclick", xray );  
+             } 
+
+
+
+function xray(event) {
+    var fire = event.target.id;
+    var  subdate = document.getElementById(fire);
+    var val = subdate.textContent;
+
+    if(val != "today")  {
+         var lett = subdate.id
+         arg = parameters(lett);
+         var formhid = document.getElementById("butval");
+         formhid.value = String(arg);
+        /* window.alert(lett) 
+         return*/
+         
+         
+    }
+    else 
+    {
+        var formhid = document.getElementById("butval");
+        formhid.value = val;
+    }
+     // window.alert(arg)
+    document.forms["hidn"].submit();
+
+
+  }
+
+
+// Activated at window on load
+function dateTranslate() {
+   var days = ["g", "f", "e", "d", "c", "b", "a"];
+   var mos = ["January", "Febrary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+   var mark = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j" ,"k" , "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "x", "y", "z"];
+   var modays = [31, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30]; 
+   var d = new Date();
+   if (d.getFullYear() % 4 == 0) {
+        modays = [31, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30];
+   }  
+   var m = document.getElementById("tit");
+   var mo = d.getMonth();
+
+   m.textContent = mos[mo];
+   if (d.getFullYear() % 4 == 0) {
+        modays 
+   }
+   var b = modays[mo]; 
+   var da = days[d.getDay()];
+   var dae = String(da);
+   var x = mark.indexOf(dae)
+   var z = d.getDate()
+   var tod = document.getElementById(dae);
+   var mole = "today";
+   // var f = new Date(month, day, Year);
+   tod.textContent = mole ;
+   for(var a = 1; a <= 21; a++) {
+        cell = document.getElementById(mark[x + a]);
+        if((z - a) <= 0)
+            cell.textContent = z - a  + b;
+        else
+            cell.textContent = z - a;
+   }
+   
+}
+
+function parameters(lett) {
+   var days = ["g", "f", "e", "d", "c", "b", "a"];
+   var mos = ["January", "Febrary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+   var mark = ["a", "b", "c", "d", "e", "f", "g","h", "i", "j" ,"k" , "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v"];
+   // var modays = [31, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30]; 
+   var d = new Date();
+   var lett = lett
+   
+  
+   // var tod = document.getElementById(dae);
+   var letts = String(lett);
+   //index of letter
+   var indx = mark.indexOf(letts);
+   //index of today
+   var td1 = d.getDay()
+
+   var td2 = days[td1];
+
+   var td3 = mark.indexOf(td2)
+   
+   var distance = Math.abs(td3 - indx);
+
+
+   // milliseconds from 1/ 1/ 70 to  1/1 current year
+   var milltime = new Date().setFullYear(new Date().getFullYear(), 0, 1);
+
+   // milltime in days
+   var janone = Math.floor(milltime/86400000);
+
+   // 1/ 1/ 70 to today(in days)
+   var today = Math.ceil((new Date().getTime()) / 86400000); 
+
+   // today's day of year in days
+   var dayofyr = today - janone
+
+ // day of year for button clicked on page
+   var yrday = dayofyr - distance
+
+
+   /*window.alert(yrday);
+   return*/
+    return yrday
+}
+
+
+
+
+window.onload = dateTranslate();
+
+
+ 
+
+
+</script>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+ <!DOCTYPE html>
+ <html>
+ 
+ <head>
+<meta name="viewport" content="width= device-width, initial-scale=1">
+<meta http-equiv="Cache-control" content="public">
+
+
+<title id = "tit">NOTICE</title>
+
+
+
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<style>
+
+body {
+	background-color: green;
+}
+
+#etval  {
+  display: none;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+<body>
+<!-- <input type= "text" name = "emval" id ="emval" value= "{{tag}}"/> -->
+<div class="modal fade" id="yourmodal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">NO DATA</h4>
+        </div>
+        <div class="modal-body">
+          <p><strong>This date contains no SF Time Runs for you.</strong></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id = "mod" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>    
+
+<form method = 'post' name = 'notice' id = 'notice' action = "/v">
+{% csrf_token %}
+<a href= "/v" id = "hal"><input type= "text" name = "etval" id ="etval" value= "{{ request.session.password }}"/></a>
+</form>
+
+
+</body>
+<script>
+window.onload = go();
+
+
+ function go()   {
+
+    $("#yourmodal").modal();
+	
+	
+}
+
+var scorpion = document.getElementById("mod")
+
+if(scorpion.addEventListener) {scorpion.addEventListener("click", stopp,  false);
+			 }  
+			 else if(scorpion.attachEvent) { 
+			  scorpion.attachEvent("onclick", stopp );  
+			 } 
+
+ 
+ 
+// $('#yourmodal').onunload = stopp();
+
+function stopp() {
+	var bal = document.getElementById("notice")
+  var sal = document.getElementById("hal")
+	bal.submit();
+  // sal.click();
+}
+// 
+</script>

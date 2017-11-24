@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+{% load staticfiles %} 
+<html  lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Email</title>
+
+
+
+<link rel="stylesheet" href="../static/chosen.css"/> 
+<link rel="shortcut icon" href= "../static/Zfav.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href= "//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel= "stylesheet">
+<link href="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" rel= "stylesheet">
+<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
+<style>
+
+#b {
+	margin-left: 5%;
+	width: 90%;
+	height: 50px;
+	margin-top: 25%;
+}
+
+#signIn {
+	margin-top: 50px;
+	width: 90%;
+	margin-left: 5%;
+	color: green;
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+<div class = "row">
+
+<div class= "col-sm-3" id="a">
+</div>
+
+
+<div class= "col-sm-6" >
+
+<form method ="POST" action="/S" id="b">
+{% csrf_token %}
+  <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+  </div>
+
+	
+	<button name="button" id= "signIn" >Sign In</button>
+			
+</form>	
+</div>
+<div class= "col-sm-3" id="c">
+</div>
+
+</div>
+
+	</body>

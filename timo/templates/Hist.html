@@ -1,0 +1,365 @@
+<!DOCTYPE HTML>
+ <!DOCTYPE html>
+ <html>
+ 
+ <head>
+<meta name="viewport" content="width= device-width, initial-scale=1">
+<meta http-equiv="Cache-control" content="public">
+
+
+<title id = "tit">HISTORY</title>
+
+
+
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<style>
+h4  {
+	color: blue;
+	
+}
+
+h3  {
+	color: red;
+}
+#two  {
+	margin-top: 20%;
+}
+
+#yourModal {
+
+	color: #0B610B
+}
+
+.modal-header {
+      background-color: #5cb85c;
+}
+
+p  {
+	color: blue;
+	text-align: center;
+}
+
+#emval  {
+	display: none;
+}
+ 
+#back  {
+    margin-top: 5%;
+    width: 20%;
+    height: 50px;
+    color: white;
+    background-color: green;
+    font-size: large;
+    font-style: bold;
+   
+}
+@media only screen and (max-width: 768px) 
+{
+	.items  {
+ 	float: center;
+ 	margin-left: 40%;
+ }
+
+#md  {
+
+	float: center;
+ 	margin-left: 35%;
+
+}
+	
+	
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div class="row">
+
+
+<div class="col-sm-3">
+<input type= "text" name = "emval" id ="emval" value= "{{tag}}"/>
+</div>
+
+<div class="col-sm-6">
+ <p id = "dow"><h3 id = "md">{{ md }}</h3></p>
+</div>
+
+
+<div class="col-sm-3">
+<button  id ="back" <"JavaScript: void(0) onclick="window.history.back()">&#8592Back</>
+</div>
+
+
+</div>
+
+
+<div id = "two" class = "row">
+
+<div class = "col-sm-3">
+<p>1</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.0}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.1}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.2}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>2</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.3}}</h4>	
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.4}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.5}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>3</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.6}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.7}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.8}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>4</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.9}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.10}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.11}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>5</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.12}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.13}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.14}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>6</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.15}}</h4>	
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.16}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.17}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>7</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.18}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.19}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.20}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>8</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.21}}</h4>
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.22}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.23}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>9</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.24}}</h4>	
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.25}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.26}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+<p>10</p>
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.27}}</h4>	
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.28}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.29}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+
+
+
+<script>
+
+
+
+</script>
+</body>

@@ -1,0 +1,633 @@
+<!DOCTYPE HTML>
+ <!DOCTYPE html>
+ <html>
+ 
+ <head>
+<meta name="viewport" content="width= device-width, initial-scale=1">
+<meta http-equiv="Cache-control" content="public">
+
+
+<title id = "tit">OUT TIME</title>
+
+
+
+
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<style>
+
+
+
+
+
+#fg {
+	margin-top: 15%;
+	display: block;
+	/*width: 100%;*/
+}
+
+#out  {
+	
+	margin-top: 10%;
+	display: block;
+	margin-left: 25%;
+	width: 50%;
+	height: 75px;
+	background-color: red;
+	font-size: 1.5em
+}
+
+#close  {
+	
+
+	margin-left: 50%;
+	margin-top: 2%;
+	width: 20%;
+	height: 50px;
+	color: white;
+	background-color: red;
+	font-size: large;
+}
+
+
+#a1, #a2, #a3 {
+
+	color: blue;
+
+}
+
+
+#save  {
+	
+	margin-top: 10%;
+	display: block;
+	width: 50%;
+	margin-left: 25%;
+	background-color: yellow;
+	font-size: 1.5em
+
+}
+
+#newRun {
+	width: 80%;
+	margin-left: 10%;
+}
+
+.heads {
+	margin-top: 20%;
+	text-align: center;
+	color: blue;
+}
+
+
+
+.items  {
+	text-align: center;
+}
+
+.row  {
+	margin-top: 5%;
+}
+
+.row0  {
+	margin-top: 5%;
+}
+#emval {
+	display: none;
+}
+
+body {
+	background-color: #F6CECE;
+}
+
+
+
+
+</style>
+</head>
+
+
+
+
+
+
+<body>
+<div class="row0">
+<div class = "col-sm-4">
+		
+</div>
+
+
+
+<div class = "col-sm-4">
+		
+</div>
+
+
+
+<div class = "col-sm-4">
+
+<a href="/o"><button  id ="close">CLOSE</button></a>
+		
+</div>
+
+
+</div>
+
+<div class="row">
+<div class = "col-sm-4">
+		
+</div>
+
+
+
+
+<div class= "col-sm-4" >
+<form class="form-horizontal" name= "nRun" role="form" method="post" action="/W">
+<div class="form-group" id = "fg">
+{% csrf_token %}		
+		
+		
+			<label for="newRun">Time</label>
+			<input  type="text" name="newRun" id= "newRun" placeholder="time" class="form-control" required/>
+			<input type= "text" name = "emval" id ="emval" value= "{{ request.session.password }}"/>
+			<input type="submit" name="save" id ="save" value="SAVE">
+</div>			
+</form>	
+
+			<button type="button" id ="out">OUT</button>
+</div>
+
+ 			
+		
+			  
+
+
+	
+
+
+<div class = "col-sm-4">
+</div>
+
+</div>
+
+
+ <div class = "row2">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="heads" id ="hi"></h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="heads" id ="ho"></h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="heads" id ="hd"></h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div> 
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="a1">{{item}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="a2">{{Out}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="a3">{{Duration}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.0}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.1}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.2}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="7">{{items.3}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="8">{{items.4}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="9">{{items.5}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.6}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.7}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.8}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.9}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.10}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.11}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.12}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.13}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.14}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.15}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.16}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.17}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.18}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.19}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.20}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.21}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.22}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.23}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.24}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.25}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.26}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+<div class = "row">
+
+<div class = "col-sm-3">
+</div>
+
+<div class = "col-sm-2">
+<h4 class="items" id ="4">{{items.27}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="5">{{items.28}}</h4>		
+</div>	
+
+<div class = "col-sm-2">
+<h4 class="items" id ="6">{{items.29}}</h4>		
+</div>	
+
+
+<div class = "col-sm-3">
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+<script>
+var disave = document.getElementById("save");
+
+
+function startUp() {
+	disave.disabled = true
+}
+
+
+
+
+steero = document.getElementById("out")
+
+if(steero.addEventListener) {steero.addEventListener("click", timeroo,  false);
+			 }  
+			 else if(steero.attachEvent) { 
+			  steero.attachEvent("onclick", timeroo );  
+			 } 
+
+
+
+function main()  {
+var meero = document.getElementById("")
+
+if(meero.addEventListener) {meero.addEventListener("click", ding,  false);
+			 }  
+			 else if(meero.attachEvent) { 
+			  meero.attachEvent("onclick", ding );  
+			 }
+
+
+var input = {year:0, month:0, day:00, hours:00, minutes:00, seconds:00};
+var timestamp = new Date(input.year, input.month, input.day, 
+                         input.hours, input.minutes, input.seconds);
+
+
+
+
+
+
+var interval = 1000;
+
+
+ 
+ 	 
+ 
+ 
+
+
+ var compare = timeroo()
+ var ca2 = new Date(compare)
+ var ca3 = ca2.getTime
+ // document.getElementById("start").value = timeroo();
+ document.getElementById("start").value = compare
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+function ding(ca3) {
+
+ 	
+ 	 window.clearInterval(myvar);
+
+
+ 	 document.getElementById("stop").value = timeroo();
+ 	 var da = new Date(document.getElementById("stop").value)
+ 	 var da2 = new Date(document.getElementById("start").value)
+ 	 var da5 = da.getTime()
+ 	 var da6 = da2.getTime()
+ 	 var timestamp2 = da5 - da6
+
+
+
+ 	var v = document.getElementById("start").value
+
+ 	
+
+ 	var final = msToTime(timestamp2)
+
+ 	// document.getElementById("countd").value = final
+
+ 	// window.alert(final);
+}
+
+function timeroo() {
+// Create a date object with the current time
+  var now = new Date();
+
+// Create an array with the current month, day and time
+   var date = [ now.getMonth() + 1, now.getDate(), now.getFullYear() ];
+
+// Create an array with the current hour, minute and second
+  var time = [ now.getHours(), now.getMinutes() ];
+
+// Determine AM or PM suffix based on the hour
+  var suffix = ( time[0] < 12 ) ? "AM" : "PM";
+
+// Convert hour from military time
+  time[0] = ( time[0] < 12 ) ? time[0] : time[0] - 12;
+
+// If hour is 0, set it to 12
+  time[0] = time[0] || 12;
+
+// If seconds and minutes are less than 10, add a zero
+  for ( var i = 1; i < 3; i++ ) {
+    if ( time[i] < 10 ) {
+      time[i] = "0" + time[i];
+    }
+  }
+
+// Return the formatted string
+  var result = time.join(":") + " " + suffix;
+ // var result = date.join("/") + "      " + time.join(":") + " " + suffix;
+  var nr = document.getElementById("newRun")
+
+  nr.value= String(result)
+
+  disave.disabled = false
+  
+}
+
+function msToTime(s) {
+
+  // Pad to 2 or 3 digits, default is 2
+  function pad(n, z) {
+    z = z || 2;
+    return ('00' + n).slice(-z);
+  }
+
+  var ms = s % 1000;
+  s = (s - ms) / 1000;
+  var secs = s % 60;
+  s = (s - secs) / 60;
+  var mins = s % 60;
+  var hrs = (s - mins) / 60;
+
+  return pad(hrs) + 'h' + ':'  + pad(mins) + 'm' + ':' + pad(secs) + 's';
+}
+
+window.onload = startUp();
+</script>
+
+
+
+
+</script>
